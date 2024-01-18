@@ -1,0 +1,43 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+.custom-toolbar {
+  background-color: #004380;
+}
+.toolbar-001
+.search{
+  background-color: #004380;
+  font-size: 10px;
+  padding: -10px 0 10px 10px;
+  border-radius: 1px;
+  width: 100%;
+  color:aliceblue
+}
+
+.toolbar-row {
+  font-size: 1.5rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo-image {
+  width: 120px;
+  height: 35px;
+}
+
+/* .toolbar-text {
+  color: #ffffff;
+} */
+
+.cart-carrinho {
+  color: #ffcb05;
+  background-color: #004380;
+  border: none;
+}
+  

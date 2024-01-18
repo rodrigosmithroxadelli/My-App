@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span class="title">Multi Scan</span>
+</mat-toolbar>
+
+<div [style.background]="scanActive ? 'rgba(0, 0, 0, 0)' : '#ffffff'" class="content" [attr.fullscreen]="true">
+
+  <div class="scan-box" *ngIf="!scanActive"></div>
+  <div class="detection-area"></div>
+  <div *ngIf="!scanActive" class="scan-button">
+    <button mat-raised-button color="primary" (click)="startScanner()">SCAN</button>
+    <span class="espaco-horizontal"></span>
+    <button mat-raised-button color="warn" (click)="stopScanner()">Stop</button>
+
+    <!-- Link clicável apenas se houver resultado -->
+    <a *ngIf="qrCodeResult" [routerLink]="['/qrcode-result', { result: qrCodeResult }]">
+      <button mat-raised-button color="primary">Ver Resultado</button>
+    </a>
+  </div>
+</div>

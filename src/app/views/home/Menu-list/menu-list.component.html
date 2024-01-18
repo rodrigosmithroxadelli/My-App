@@ -1,0 +1,136 @@
+<ng-container *ngIf="exibirMenu">
+  <nav>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="selectCategory('moveis')">MÓVEIS</button>
+    <button mat-menu-item (click)="selectCategory('eletronicos')">ELETRÔNICOS</button>
+    <button mat-menu-item (click)="selectCategory('eletrodomesticos')">ELETRODOMÉSTICOS</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="qrcodeMenu">QR Code</button>
+    <mat-menu #qrcodeMenu="matMenu">
+      <button mat-menu-item (click)="navigateToQrcode()">Scanear QR Code</button>
+    </mat-menu>
+  </nav>
+</ng-container>
+
+<div class="tab-content" *ngIf="selectedCategory === 'moveis'">
+  <mat-card class="mat-card-moveis">
+    <mat-card-header >
+      <mat-card-title>Conjunto Sofá</mat-card-title>
+      <mat-card-subtitle>Conjunto Sofá 3 E 2 Lugares Sued Bahamas Flash Estofados</mat-card-subtitle>
+    </mat-card-header>
+    <br>
+    <img class="larger-image"
+      src="https://multilojaonline.vtexassets.com/arquivos/ids/168750-1200-auto?v=637726114060200000&width=1200&height=auto&aspect=true"
+      alt="Photo of a Conjunto Sofá" loading="lazy"
+      class="vtex-product-summary-2-x-imageNormal vtex-product-summary-2-x-image vtex-product-summary-2-x-image--m3-shelf-product-image"
+      crossorigin="anonymous">
+    <mat-card-content>
+      <div>
+        <p class="small-square">
+          Conjunto Sofá 3 e 2 Lugares Bahamas Flash é ideal para completar a sua sala de estar.
+          Fabricado com o que há de melhor de materiais, madeiramento de reflorestamento de eucalipto e com tecido
+          sued.
+          Seu revestimento traz conforto com acabamento de espuma D-23. Características: Espuma D-23 Madeira de
+          reflorestamento
+          Tecido Sued Dimensões: Altura: 95 cm Largura: 200 e 150 cm Profundidade: 86 cm Garantia do fornecedor de 3
+          meses.
+        </p>
+        <mat-card-actions class="button-container">
+          <button (click)="onButtonClick()" mat-raised-button style="background-color: #ffcb05;">Comprar
+            Agora</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button mat-raised-button (click)="decrementa()">-</button>
+            <input type="text" [value]="valor" readonly>
+            <button mat-raised-button (click)="incrementa()" >+</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button (click)="openDialog()" mat-raised-button style="background-color: #7c9efc;">Add
+            Carrinho</button>
+        </mat-card-actions>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="tab-content" *ngIf="selectedCategory === 'eletronicos'">
+  <mat-card class="mat-card-eletronicos">
+    <mat-card-header>
+      <mat-card-title>Console Sony PlayStation 5</mat-card-title>
+      <mat-card-subtitle>Console Sony PlayStation 5 + EA Sports FC24, CFI-1214A01X 825GB SSD</mat-card-subtitle>
+    </mat-card-header>
+    <br>
+    <img class="larger-image"
+      src="https://multilojaonline.vtexassets.com/arquivos/ids/231973-220-220?v=638320278162970000&width=220&height=220&aspect=true"
+      alt="Photo of a Console Sony PlayStation 5" loading="lazy"
+      class="vtex-product-summary-2-x-imageNormal vtex-product-summary-2-x-image vtex-product-summary-2-x-image--m3-shelf-product-image"
+      crossorigin="anonymous">
+    <mat-card-content>
+      <div>
+        <p class="small-square">
+          O console PS5 oferece novas possibilidades de jogabilidade que você nunca imaginou.
+          Reproduza jogos para PS5 e PS4 em Blu-ray Disc. Além disso, você também pode baixar jogos digitais para
+          PS5 e PS4 pela PlayStation Store.
+          Com SSD ultrarrápido maximize suas sessões de jogo com tempo de carregamento praticamente instantâneo para
+          jogos do PS5 instalados.
+        </p>
+        <mat-card-actions class="button-container">
+          <button (click)="openDialog()" class="example-button-row" mat-raised-button style="background-color: #ffcb05;">Comprar
+            Agora</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button mat-raised-button (click)="decrementa()">-</button>
+            <input type="text" [value]="valor" readonly>
+            <button mat-raised-button (click)="incrementa()" >+</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button (click)="openDialog()" class="example-button-row" mat-raised-button style="background-color: #7c9efc;">Add
+            Carrinho</button>
+        </mat-card-actions>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div class="tab-content" *ngIf="selectedCategory === 'eletrodomesticos'">
+  <mat-card class="mat-card-eletrodomesticos">
+    <mat-card-header>
+      <mat-card-title>Fogão 5 Bocas Atlas Mônaco Plus</mat-card-title>
+      <mat-card-subtitle>R$ 877,67 em até 10x de R$ 87,76 no cartão sem juros</mat-card-subtitle>
+    </mat-card-header>
+    <br>
+    <img class="larger-image"
+      src="https://multilojaonline.vtexassets.com/arquivos/ids/204517-440-440?v=637919541136070000&amp;width=440&amp;height=440&amp;aspect=true"
+      alt="Fogão 5 Bocas Atlas Mônaco Plus" loading="lazy"
+      class="vtex-product-summary-2-x-imageNormal vtex-product-summary-2-x-image vtex-product-summary-2-x-image--m3-shelf-product-image"
+      crossorigin="anonymous">
+    <mat-card-content>
+      <div>
+        <p class="small-square">
+          Quer sofisticação e praticidade na sua cozinha? O Fogão Mônaco Plus é a melhor opção!
+          Conta com mesa de Inox em um novo formato, que ajuda a reter líquidos derramados,
+          acendimento automático, trempes em nova trama, capacidade de 86,5 litros no forno e pés com novo design,
+          mais clean e mais altos, que facilitam a limpeza. Características:
+          Tampo de vidro na mesa Manipuladores removíveis Visor amplo na porta do forno Vidro interno
+          removível Puxador tubular Capacidade do forno 86,5 L Pés com design mais clean e mais altos
+          Trempes em nova trama Dimensões: Altura: 88,6 cm Largura: 75 cm Profundidade: 58,5 cm Peso:
+          24,6 kg Garantia do fornecedor: 12 meses.
+        </p>
+        <mat-card-actions class="button-container">
+          <button (click)="onButtonClick()" class="example-button-row" mat-raised-button style="background-color: #ffcb05;">Comprar
+            Agora</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button mat-raised-button (click)="decrementa()">-</button>
+            <input type="text" [value]="valor" readonly>
+            <button mat-raised-button (click)="incrementa()" >+</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button (click)="onButtonClick()" class="example-button-row" mat-raised-button style="background-color: #7c9efc;">Add
+            Carrinho</button>
+        </mat-card-actions>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

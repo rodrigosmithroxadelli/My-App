@@ -1,0 +1,33 @@
+/* Estilos para a barra de ferramentas */
+mat-toolbar {
+  background-color: #004380; /* Cor de fundo da barra de ferramentas */
+  color: white; /* Cor do texto da barra de ferramentas */
+}
+
+/* Estilos para o conteúdo */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Estilos para a caixa de varredura */
+.scan-box {
+  border: 2px solid #000;
+  width: 200px;
+  height: 200px;
+}
+
+/* Estilos para os botões de varredura e parada */
+.scan-button {
+  margin-top: 20px; /* Espaçamento superior entre a caixa de varredura e os botões */
+}
+
+/* Estilos para o espaçamento horizontal entre os botões */
+.espaco-horizontal {
+  margin-left: 10px; /* Ajuste conforme necessário */
+}
+
+/* Adicione mais estilos conforme necessário para o seu design */
